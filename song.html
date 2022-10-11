@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body {
+    font-family: "Do HYEON", sans-serif;
+    }
+        .blue {
+            width: 0px;
+            height: 5px;
+            background-color: rgb(92, 100, 254);
+        }
+        .lyrics {
+            width: 250px;
+            height: 150px;
+            overflow-y: scroll; /*넘쳤을 때 스크롤이 보이게*/
+            background-color: rgb(192, 224, 255);
+        }
+    </style>
+    <div class = "blue"></div>
+    <div class = "lyrics">
+        <p>
+어쩌면 누군가를
+사랑하는 것보다
+더 어려운 게 나 자신을
+사랑하는 거야
+솔직히 인정할 건 인정하자
+니가 내린 잣대들은
+너에게 더 엄격하단 걸
+니 삶 속의 굵은 나이테
+그 또한 너의 일부 너이기에
+이제는 나 자신을
+용서하자 버리기엔
+우리 인생은 길어
+미로 속에선 날 믿어
+겨울이 지나면
+다시 봄은 오는 거야
+차가운 밤의 시선
+초라한 날 감추려
+몹시 뒤척였지만
+저 수많은 별을
+맞기 위해 난 떨어졌던가
+저 수천 개 찬란한
+화살의 과녁은 나 하나
+You've shown me I have reasons
+I should love myself
+내 숨 내 걸어온 길 전부로 답해
+어제의 나 오늘의 나 내일의 나
+I'm learning how to love myself
+빠짐없이 남김없이 모두 다 나
+        </p>
+    </div>
+    <script>
+        let bar = document.querySelector('.blue');
+        let lyric = document.querySelector('.lyrics');
+        lyric.addEventListener("scroll", function () {
+            let scrollTop = lyric.scrollTop;
+            let scrollHeight = lyric.scrollHeight - lyric.clientHeight;
+            let per = scrollTop / scrollHeight;
+            bar.style.width = `${per*250}px`;
+        })
+    </script>
+</body>
+</html>
